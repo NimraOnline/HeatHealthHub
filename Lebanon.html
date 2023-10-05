@@ -27,6 +27,12 @@
     <center style="font-size: 30px;"> Risk Assessment </center>
     <br>
     <form action="http://localhost:5000" method="post" class='riskform'>
+      
+      <label for="city">City (Preselected):</label>
+      <select name="city" disabled>
+          <option value="Beirut" selected>Beirut</option>
+      </select>
+      
       <label for="age">How old are you?</label>
       <input type="number" name="age" min="0" max="150" required>
 
