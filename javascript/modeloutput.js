@@ -1,4 +1,6 @@
 const form = document.querySelector('.riskform');
+const getform = document.getElementById('riskForm'); // Select the form by its ID
+
 
 // Function to handle form submission
 async function handleSubmit(event) {
@@ -32,6 +34,8 @@ async function handleSubmit(event) {
 
         // Access the JSON data and update your HTML content
         //document.getElementById('prediction').textContent = data.prediction;
+        // Hide the form
+        getform.style.display = 'none';
         document.getElementById('result').innerHTML = data.risk_map;
     } catch (error) {
         console.error('Error:', error);
