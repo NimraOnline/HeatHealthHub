@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Jost' rel='stylesheet'>
+  <link rel="stylesheet" href="Datathon.css">
+  <div class="topnav">
+    <a href="Datathon.html">Home</a>
+    <a href="Knowledgehub.html">Knowledge Hub</a>
+    <a href="About.html">About</a>
+    <a class="active" href="#lebanon">Lebanon</a>
+    <a href="Syria.html">Syria</a>
+  </div>
+
+  <div class="Alert"></div>
+
+  <div class="LebanonMain" style="height:850px;">
+    <div class='split left'>
+      <br>
+       <center style="font-size: 30px;"> Lebanon's Most Recent Heatwave Metrics </center>
+       <br>
+      <div class='tableauPlaceholder' id='viz1696429617905' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Be&#47;BeirutHeatwave2023&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BeirutHeatwave2023&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Be&#47;BeirutHeatwave2023&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1696429617905');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='800px';vizElement.style.height='677px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='800px';vizElement.style.height='677px';} else { vizElement.style.width='100%';vizElement.style.height='877px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+
+
+  <div class='split right'>
+    <br>
+    <center style="font-size: 30px;"> Risk Assessment </center>
+    <br>
+    <form action="/submit" method="post" class='riskform'>
+      <label for="age">How old are you?</label>
+      <input type="number" name="age" min="0" max="150" required>
+
+      <label for="gender">What is your sex?</label>
+      <select name="gender" required>
+        <option value="">Select your sex</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="sick">Are you currently sick?</label>
+      <select name="sick" required>
+        <option value="">Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="psychiatric_disorder">Do you have a psychiatric disorder?</label>
+      <select name="psychiatric_disorder" required>
+        <option value="">Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="diabetic">Are you diabetic?</label>
+      <select name="diabetic" required>
+        <option value="">Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="cardiovascular_disease">Do you have cardiovascular disease?</label>
+      <select name="cardiovascular_disease" required>
+        <option value="">Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="renal_disease">Do you have a kidney disease/ disorder?</label>
+      <select name="renal_disease" required>
+        <option value="">Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="pregnant">Are you pregnant?</label>
+      <select name="pregnant" required>
+        <option value="">Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <button type="submit" class='submit'>Submit</button>
+    </form>
+
+    <div id="result">
+        <img id="outputImage" src="model.png" alt="Risk Score">
+    </div>
+
+    </div>
+  </div>
+  <script src="modeloutput.js"></script>
+
+
+<div class="footer">
+
+</div>
+
+</body>
+</html>
