@@ -145,7 +145,7 @@ body {
 
 .submit {
   position: absolute;
-  top: 700px;
+  top: 758px;
   left: 78%;
   background-color: #5BBDDE;
   border-radius: 50px;
@@ -400,7 +400,7 @@ button {
 .right {
   width: 40%;
   right: 0;
-  height: 800px;
+  height: 820px;
   background-color: #C6EEFB;
   border-radius: 25px;
   padding: 25px;
