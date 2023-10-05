@@ -15,7 +15,7 @@ async function handleSubmit(event) {
     
     // Fetch data from the Flask route
     try {
-        const response = await fetch('/process_form', {
+        const response = await fetch('http://localhost:5000/process_form', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
