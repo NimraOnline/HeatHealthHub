@@ -1,30 +1,42 @@
-// Function to make an AJAX request to the server
-function fetchData() {
-    fetch('/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        // You can include any data to send to the server here
-        // body: JSON.stringify({ someData: 'example' }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Handle the data received from the server
-        const riskHeatmap = data.risk_heatmap;
-        const otherData = data.other_data;
+const form = document.querySelector('.riskform');
 
-        // Update the page with the received data
-        document.getElementById('result').innerHTML = riskHeatmap;
-        // You can also update other parts of your page with otherData
+// Function to handle form submission
+async function handleSubmit(event) {
+    event.preventDefault();
 
-        console.log('Other Data:', otherData);
-    })
-    .catch(error => {
-        console.error('Error fetching data:', error);
+    // Create a FormData object from the form element
+    const formData = new FormData(form);
+
+    // Convert FormData to an object
+    const formDataObject = {};
+    formData.forEach((value, key) => {
+        formDataObject[key] = value;
     });
+    
+    // Fetch data from the Flask route
+    try {
+        const response = await fetch('/process_form', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formDataObject),
+        });
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        // Parse the JSON response
+        const data = await response.json();
+
+        // Access the JSON data and update your HTML content
+        //document.getElementById('prediction').textContent = data.prediction;
+        document.getElementById('risk_map').innerHTML = data.risk_map;
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
 
-// Call the fetchData function when the page loads
-window.onload = fetchData;
-
+// Add an event listener to the form
+document.querySelector('form').addEventListener('submit', handleSubmit);
