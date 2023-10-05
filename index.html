@@ -21,18 +21,29 @@
     <p class="centered">What is my Heat Health Risk?</p>
     <p class="bottom">Customized for residents of Beirut and Damascus</p>
     
-    <button class="button-33" role="button">Take the Quiz</button>
-
     <a class="meter" title="meter icons">
       <img src="images/speedometer.png" alt="https://www.flaticon.com/free-icons/meter" style="opacity: 0.7;">
     </a>
+    
+    <button class="button-33" role="button" id="openPopup">Take the Quiz</button>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+          <span class="close" id="closePopup">&times;</span>
+          <center><h3>Select Your Country</h3></center>
+          <button class="countrybutton" id="button1">Lebanon</button>
+          <button class="countrybutton" id="button2">Damascus</button>
+      </div>
+    </div>
+    <script src="javascript/popup.js"></script>
+
   </div>
 
-  <center>
-    <p class="IBF">Impact Based Forecasting</p>
-  </center>
 
   <div class="main" style="overflow-y: scroll; height:500px;">
+    <center>
+      <p class="IBF">Impact Based Forecasting</p>
+    </center>
     <div class="column">
       <center>
       <a title="international literacy day">
