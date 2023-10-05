@@ -32,7 +32,7 @@ async function handleSubmit(event) {
 
         // Access the JSON data and update your HTML content
         //document.getElementById('prediction').textContent = data.prediction;
-        document.getElementById('risk_map').innerHTML = data.risk_map;
+        document.getElementById('result').innerHTML = data.risk_map;
     } catch (error) {
         console.error('Error:', error);
     }
