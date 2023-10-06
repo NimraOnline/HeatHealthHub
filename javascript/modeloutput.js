@@ -1,6 +1,4 @@
 const form = document.querySelector('.riskform');
-const getform = document.getElementById('riskForm'); // Select the form by its ID
-
 
 // Function to handle form submission
 async function handleSubmit(event) {
@@ -32,11 +30,24 @@ async function handleSubmit(event) {
         // Parse the JSON response
         const data = await response.json();
 
-        // Access the JSON data and update your HTML content
-        //document.getElementById('prediction').textContent = data.prediction;
-        // Hide the form
-        getform.style.display = 'none';
-        document.getElementById('result').innerHTML = data.risk_map;
+        const htmlContent = `
+        <html>
+        <link href='https://fonts.googleapis.com/css?family=Jost' rel='stylesheet'>
+        <head>
+          <title>Popup Window</title>
+        </head>
+        <body>
+        <center>
+          <h1 style="font-family: 'Jost';">Your Risk Results</h1>
+          ${data.risk_map}
+        </center>
+        </body>
+        </html>
+      `;
+        const popupWindow = window.open('', '', 'width=600,height=400');
+        popupWindow.document.open();
+        popupWindow.document.write(htmlContent);
+        popupWindow.document.close();
     } catch (error) {
         console.error('Error:', error);
     }
