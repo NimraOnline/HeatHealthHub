@@ -4,6 +4,8 @@ const form = document.querySelector('.riskform');
 async function handleSubmit(event) {
     event.preventDefault();
 
+    const formData = new FormData(form);
+    
     const formDataList = [];
     formData.forEach((value, key) => {
         if (key === 'city') {
