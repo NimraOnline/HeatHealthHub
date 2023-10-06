@@ -61,6 +61,7 @@ function getArticleContent(article) {
         <h3>${article.Title}</h3>
         <p>${article.Authors}</p>
         <small>${article['Publication Title']}. ${article['Publication Year']}</small>
+        <p class="topic">Topic ${article['topic']}</p>
         <a href="${link}" target="_blank"></a>
     `;
     return content;
