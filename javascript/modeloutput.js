@@ -4,13 +4,20 @@ const form = document.querySelector('.riskform');
 async function handleSubmit(event) {
     event.preventDefault();
 
-    // Create a FormData object from the form element
-    const formData = new FormData(form);
-
-    // Convert FormData to an object
-    const formDataObject = {};
+    const formDataList = [];
     formData.forEach((value, key) => {
-        formDataObject[key] = value;
+        if (key === 'city') {
+            formDataList.push(value);
+        }
+        if (key === 'age' || key === 'gender') {
+            if (key === 'gender') {
+                formDataList.push(value === 'female' ? 0 : 1);
+            } else { //age
+                formDataList.push(parseInt(value));
+            }
+        } else {
+            formDataList.push(value === 'no' ? 0 : 1);
+        }
     });
     
     // Fetch data from the Flask route
@@ -20,7 +27,7 @@ async function handleSubmit(event) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(formDataObject),
+            body: JSON.stringify(formDataList),
         });
         
         if (!response.ok) {
