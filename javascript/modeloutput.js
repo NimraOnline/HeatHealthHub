@@ -50,13 +50,13 @@ async function handleSubmit(event) {
         const data = await response.json();
         var color;
         if (data.prediction === 'Low Risk'){
-            color = '#75CF7E';
+            color = 'rgba(117,207,126,1)';
         }
         if (data.prediction === 'Moderate Risk'){
-            color = '#FFF071';
+            color = 'rgba(255,240,113,1)';
         }
         if (data.prediction === 'High Risk'){
-            color = '#FFA64C';
+            color = 'rgba(255,166,76,1)';
         }
         if (data.prediction === 'Very High Risk'){
             color = '#FF4C4C';
@@ -65,24 +65,66 @@ async function handleSubmit(event) {
         <html>
         <link href='https://fonts.googleapis.com/css?family=Jost' rel='stylesheet'>
         <head>
+            <style>
+                @import "https://unpkg.com/open-props" layer(design.system);
+                @import "https://unpkg.com/open-props/normalize.min.css" layer(demo.support);
+                
+                @layer demo {
+                  .rounded-border-gradient {
+                    width: 550px;
+                    height: 450px;
+                    
+                    aspect-ratio: var(--ratio-widescreen);
+                    border: solid var(--size-2) transparent;
+                    border-radius: var(--radius-4);
+                    background: 
+                      linear-gradient(white, white) padding-box, 
+                      var(--gradient-1) border-box;
+                    
+                  }
+                }
+                
+                @layer demo.support {
+                  body {
+                    display: absolute;
+                    padding: var(--size-5);
+                  }
+                  .circle {
+                    display: inline-block; /* Make it an inline element */
+                    width: 20px; /* Set the width and height to create a circle */
+                    height: 20px;
+                    background-color: ${color}; /* Color of the circle */
+                    border-radius: 50%; /* Create a circle shape */
+                    margin-right: 10px; /* Add spacing to the right of the circle */
+                  }
+                }
+            </style>
+            
           <title>Popup Window</title>
         </head>
-        <body style="background-color: ${color};">
+        <body>
         <center>
           <h1 style="font-family: 'Jost';">Your Risk Results</h1>
-          ${data.risk_map}
           <br>
+           <p style="font-family: 'Jost';">In the event of a heatwave, you may be</p>
+          <h3 style="font-family: 'Jost';">${data.prediction} <span class="circle"></span> </h3>
+          <hr>
+          <h3 style="font-family: 'Jost';"> Your heat-health risk for the next 3 days </h3>
+          <div class="rounded-border-gradient" style="padding:5px;">
+              ${data.risk_map}
+          </div>
           <br>
-          <p style="font-family: 'Jost';">In the event of a heatwave, you may be</p>
-          <h3 style="font-family: 'Jost';">${data.prediction}</h3>
-          ${insight}
-          <br>
-          
+          <p style="font-size: 10px; font-family: 'Jost';"> 
+              This graph displays your risk score in relation to the highest temperature forecasted for the next three days. The horizontal axis represents vulnerability to heatwaves, ranging from low (1) to high (4). The vertical axis represents a temperature range, with the temperature in the middle being the highest forecasted temperature for the next 3 days. Different colors represent varying risk levels. You can reference the Risk Scale on the right of the graph to assess your risk and take precautions accordingly over the next three days.
+          </p>
+          <hr>
+        ${insight}
         </center>
+        
         </body>
         </html>
       `;
-        const popupWindow = window.open('', '', 'width=600,height=500');
+        const popupWindow = window.open('', '', 'width=600,height=800');
         popupWindow.document.open();
         popupWindow.document.write(htmlContent);
         popupWindow.document.close();
