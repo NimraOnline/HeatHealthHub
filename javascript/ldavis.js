@@ -1,8 +1,8 @@
 //import * as d3 from "https://cdn.skypack.dev/d3@5";
 
 const urlList = [
-    "./../data/lda-model.json",
-    "./../data/pubmed_extreme-heat_data_topics.json"
+    "./data/lda-model.json",
+    "./data/pubmed_extreme-heat_data_topics.json"
 ];
 
 const promiseList = urlList.map((url) => {
