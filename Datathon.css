@@ -425,3 +425,11 @@ button {
   background-image: linear-gradient(white, #5BBDDE);
 }
 
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: beige;
+  text-align: center;
+  line-height: 200px;
+  display: none; /* Initially hidden */
+}
