@@ -1,7 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>News Ticker</title>
+    <style>
+        #news-ticker-container {
+            width: 100%;
+            background-color: #fff47c;
+            color: #333;
+            overflow: hidden;
+        }
+
+        #news-ticker {
+            white-space: nowrap;
+            animation: ticker 20s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+
+
   <link href='https://fonts.googleapis.com/css?family=Jost' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/gh/abdmob/x2js@master/xml2json.js"></script>
   <link rel="stylesheet" href="Datathon.css">
   <div class="topnav">
     <a href="index.html">Home</a>
@@ -11,7 +37,14 @@
     <a href="Syria.html">Syria</a>
   </div>
 
-  <div class="Alert"></div>
+  <div class="Alert">
+    <div class="box" id="myBox">Box Content</div>
+    <div id="news-ticker-container">
+      <div id="news-ticker">
+          <p>on 10/09/2023 at 2:45 AM GMT a Yellow High Temperature Warning has been issued for Northern Israel with a severity of Moderate this alert shall expire on 10/11/2023 at 11:59 PM GMT</p>
+      </div>
+  </div>
+  </div>
 
   <div class="LebanonMain" style="height:850px;">
     <div class='split left'>
@@ -93,6 +126,7 @@
     </div>
   </div>
   <script src="javascript/modeloutput.js"></script>
+  <script src="javascript/api.js"></script>
 
 
 <div class="footer">
