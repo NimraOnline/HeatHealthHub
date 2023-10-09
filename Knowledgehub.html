@@ -126,6 +126,36 @@
       right: 10px;
       color: #004cff;
     }
+
+
+    .example-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        /* Style for the list items */
+        .example-item {
+            cursor: pointer;
+            padding: 8px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+        
+        /* Style for the sub-list (hidden by default) */
+        .sub-example-list {
+            list-style-type: none;
+            padding: 0;
+            display: none;
+        }
+        
+        /* Style for the sub-list items */
+        .sub-example-item {
+            padding: 8px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.4.0/pyLDAvis/js/ldavis.v3.0.0.js" ></script>
@@ -176,6 +206,7 @@
       <ul class="tabs">
         <li class="tab"><label for="tab1">Topic Model</label></li>
         <li class="tab"><label for="tab2">Articles</label></li>
+        <li class="tab"><label for="tab3">preventative meassures</label></li>
       </ul>
 
       <div class="tab-content">
@@ -202,6 +233,113 @@
         </div>
       </div>
       
+      <div class="tab-content" style="width: 1210px;">
+        <center>
+          <p class="IBF"> Preventative meassure's for common symptoms and diagnosis</p>
+        </center>
+        <ul class="example-list">
+          <li class="example-item" onclick="toggleSubList('sublist1')">AKI (Acute kidney injury)</li>
+          <ul id="sublist1" class="sub-example-list">
+              <li class="sub-example-item">
+              drink water in a manner that prevents dehydration, by either drinking to thirst or drinking according to body mass loss when available,    
+              </li>
+          </ul>
+          <li class="example-item" onclick="toggleSubList('sublist2')">CKD (chronic kidney disease)</li>
+          <ul id="sublist2" class="sub-example-list">
+              <li class="sub-example-item">
+                2. Fluid balance:
+                <br><b>-</b> consum foods high in watter and drink water frequently throughtout the day to avoid becoming dehydrated, but dont ove consume to avoid fluid overload.</br>
+                <b>-</b> avoid icy beverages, which can cause stomach cramps.
+                <br><b>-</b> avoid drinking caffeine or alcohol or ingesting large amounts of sugar, as these can cause your body to lose more fluid.</br>
+                <b>-</b> stay cool by wearing a hat or a wet bandana around your neck to help control your thirst.
+                <br><b>-</b> carry a small spray bottle filled with lemon water or mouthwash to spray your mouth when you feel excessively thirsty.</br>
+                <b>-</b> Check with your nephrologist for guidance about your fluid intake during hot summer days and whether it should be adjusted to account for the rising temperatures.
+              </li>
+              <li class="sub-example-item">
+                3. Wear sunglasses:
+                <br><b>-</b> Sunglasses protect your eyes in the same way that sunscreen protects your skin from harmful sun damage.</br>
+                <b>-</b> Your sunglasses should block at least 99% of UVB rays and 50% of UVA rays.
+                <br><b>-</b> Wraparound sunglasses and other styles that completely cover the eyes are best to avoid sun damage.</br>
+                <b>-</b> The last thing patients need is another health complication.
+               </li>
+                <li class="sub-example-item">
+                  4. Save your skin from sun exposure: 
+                  <br><b>-</b> Every Chronic Kidney Disease, Dialysis, and Kidney Transplant patients should wear sunscreen and apply it liberally.</br>
+                  - Unprotected sun exposure can cause skin damage and, in some cases, may even lead to skin cancers. Use sunscreen with an SPF of at least 15.
+                  <br><b>-</b> Remember to reapply your sunscreen every two hours and also right after swimming or exercising.</br>
+                  - A water-resistant sunscreen will be less likely to come off if you swim or perspire. 
+                  <br><b>-</b> You can also protect your skin by covering up with a shirt, wearing a hat, or sitting in the shade.</br>
+                </li>
+                <li class="sub-example-item">
+                  5. Go outside. Get moving: 
+                  <br><b>-</b> Morning or late afternoon sunny days of summer are great times to walk or enjoy a light exercise routine. Even if you feel tired at times, easy exercises may help you feel better. Please, check with your nephrologist before starting a summertime exercise routine. </br>
+                  - Whether you're spending time outdoors with your family, caring for a loved one with a chronic condition, or working outdoors, it's essential to keep cool, keep a good fluid balance, and know the warning signs of heat-related illnesses.
+                  <br><b>-</b> Be sure to talk with your nephrologist before the summer season about other ways you can stay safe during the warm summer months. </br>
+                </li>
+            </ul>
+          <li class="example-item" onclick="toggleSubList('sublist3')">hay fever</li>
+          <ul id="sublist3" class="sub-example-list">
+              <li class="sub-example-item">Keep windows closed during high pollen periods; use air conditioning in your home and car:
+                <br><b>-</b> Summer heat is proven to circulate mold spores and pollen, making seasonal allergies worse.
+                <br><b>-</b> tiny particles and items can cause discomfort for a lot of people. 
+                <br><b>-</b> When the air is warmer and more humid, it becomes easy for allergens to float from anywhere inside or outside your home                                                                    
+                <br><b>-</b> Use “mite-proof” bedding covers to limit exposure to dust mites and a dehumidifier to control mold. (If you smell mildew, you likely have mold).</li>
+              <li class="sub-example-item">Wear glasses or sunglasses when outdoors to keep pollen out of your eyes.  </li>
+              <li class="sub-example-item">Wash your hands after petting any animal, and have a nonallergic person help with pet grooming, preferably in a well-ventilated area or outside.</li>
+          </ul>
+          <li class="example-item" onclick="toggleSubList('sublist4')">heat stroke</li>
+          <ul id="sublist4" class="sub-example-list">
+              <li class="sub-example-item">
+                Get Plenty to Drink:
+                <br><b>-</b> Sweating removes needed salt and minerals from the body. When it is hot, drink more water, juice and sports drinks. Avoid drinks with caffeine (tea, coffee, and cola) and alcohol.</br> 
+                 </li>
+              <li class="sub-example-item">Stay Cool Indoors:
+                <br><b>-</b> The best way to beat the heat is to stay in an air conditioned area. If you don’t have an air conditioner, go to a shopping mall or public building for a few hours. A cool shower or bath is also a good way to cool off.</br>
+                </li>
+              <li class="sub-example-item">Wear Light Clothing and Sunscreen:
+                <br><b>-</b> Wear as little clothing as possible when you are at home. Choose lightweight, light-colored, loose-fitting clothing. 
+                - In the hot sun, a wide-brimmed hat will keep the head cool. 
+                <br><b>-</b> If you will be in direct sun, use a sunscreen with a sun protection factor (SPF) of 15 or higher and follow package directions. Reapply every 2 hours while in the sun.
+                </li>
+                <li class="sub-example-item"> Schedule Outdoor Activities Carefully:
+                  <br><b>-</b> Try to be less active during the hottest part of the day, late afternoon. 
+                  - If you must be out in the heat, plan your activities so that you are outdoors either before noon or in the evening.
+                  <br><b>-</b> While outdoors, rest often in a shady area. 
+                  - Never leave kids or pets in a parked car.
+                </li>  
+          </ul>
+          <li class="example-item" onclick="toggleSubList('sublist5')">heat illness</li>
+          <ul id="sublist5" class="sub-example-list"> 
+              <li class="sub-example-item">Wear loose-fitting, lightweight clothing:
+                <br><b>-</b> Wearing excess clothing or clothing that fits tightly won't allow your body to cool properly.</br>
+              </li>
+              <li class="sub-example-item">Protect against sunburn:
+                <br><b>-</b> Sunburn affects your body's ability to cool itself, so protect yourself outdoors with a wide-brimmed hat and sunglasses and use a broad-spectrum sunscreen with a sun protection factor, or SPF, of at least 30. Apply sunscreen generously and reapply every two hours, or more often if you're swimming or sweating.</br>
+              </li>
+              <li class="sub-example-item">Drink plenty of fluids:
+                <br><b>-</b> Staying hydrated will help your body sweat and maintain an average body temperature.</li>
+              <li class="sub-example-item">Drink plenty of fluids:
+                <br><b>-</b> Staying hydrated will help your body sweat and maintain an average body temperature.</br>
+              </li>
+              <li class="sub-example-item">Take extra precautions with certain medications:
+                <br><b>-</b> Ask your health care team your medications can affect your body's ability to stay hydrated and dissipate heat.</br>
+              </li>
+          </ul>
+         </ul>
+  
+        <script>
+          function toggleSubList(id) {
+              var subList = document.getElementById(id);
+              if (subList.style.display === "none" || subList.style.display === "") {
+                  subList.style.display = "block";
+              } else {
+                  subList.style.display = "none";
+              }
+          }
+        </script>
+      
+      </div>
+
     </div>
     
   </div>
