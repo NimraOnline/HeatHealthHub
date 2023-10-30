@@ -1,4 +1,4 @@
-# HeatHealthHub | First Place
+# HeatHealthHub
 ![Datathon First Place](https://github.com/NimraOnline/HeatHealthHub/blob/main/FirstPlace.png)
 
 An early heat health warning system for residents of Beirut and Damascus, centered around impact based forecasting
@@ -6,10 +6,11 @@ An early heat health warning system for residents of Beirut and Damascus, center
 Check out the [Heat Health Hub](https://nimraonline.github.io/HeatHealthHub/)!
 
 
-To get it all running, you need to download the requirements.txt in the modelpack folder. 
+To use the Website you will need to get the backend running by
 
-Then you can run python3 main.py to get the backend up
-
-Make sure you also download the model.pkl in the modelpack folder.
-
+```python
+1. download the modelpack folder
+2. install requirements.txt
+3. run python3 main.py
+```
 Now you can get your risk level!
